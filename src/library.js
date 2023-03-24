@@ -24,7 +24,7 @@ export const movies = [
         title: "Scream",
         phrase1: "Why don't you want to talk to me?",
         phrase2: "Hello Sidney.",
-        phrase3: " What's your favorite scary movie?",
+        phrase3: "What's your favorite scary movie?",
         img:"https://m.media-amazon.com/images/M/MV5BMjA2NjU5MTg5OF5BMl5BanBnXkFtZTgwOTkyMzQxMDE@._V1_.jpg"
     },
     {

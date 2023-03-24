@@ -19,5 +19,19 @@ export const moviesEs = [
         phrase2: "Si, era uno de los Caballeros Jedi igual que tu padre.",
         phrase3: "Ayúdame, Obi-Wan Kenobi, eres mi única esperanza.",
         img:"https://i.etsystatic.com/14140434/r/il/de4702/1526222179/il_fullxfull.1526222179_kl3i.jpg"
+    },
+    {
+        title: "Scream",
+        phrase1: "¿Por qué no quieres hablar conmigo?",
+        phrase2: "Hola Sydney.",
+        phrase3: "¿Cuál es tu película de terror preferida?",
+        img:"https://m.media-amazon.com/images/M/MV5BMjA2NjU5MTg5OF5BMl5BanBnXkFtZTgwOTkyMzQxMDE@._V1_.jpg"
+    },
+    {
+        title: "Blade Runner",
+        phrase1: "¿Un galápago? ¿Qué es eso?",
+        phrase2: "Yo he visto cosas que vosotros no creeríais.",
+        phrase3: "Soy Deckard, bladerunner 2-6-3-5-4. Estoy registrado y localizado.",
+        img:"https://pics.filmaffinity.com/Blade_Runner-351607743-large.jpg"
     }
 ]

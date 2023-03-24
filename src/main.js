@@ -1,9 +1,11 @@
 import { movies } from "./library.js";
 import { moviesEs } from "./film-es.js";
+import { today } from "./date.js";
 
 //Declare variables
+var day = today;
 var movieEs = moviesEs[0];
-var movie = movies[0];
+var movie = movies[0]
 var p1 = document.querySelector('#phrase1');
 var p2 = document.getElementById('phrase2');
 var p3 = document.querySelector('#phrase3');
@@ -12,8 +14,27 @@ var dataList = document.getElementById('options');
 var langChange = document.getElementById('lang');
 var titles = [];
 var lang = "EN"
-titleOptions();
-p1.append(movie.phrase1);
+
+startGame();
+
+
+//Start Game with movie of the Day
+function startGame() {
+    titleOptions();
+    select();
+    p1.append(movie.phrase1);
+}
+
+
+//Select movies
+function select() {
+    while (day > movies.length) {
+        day = day - movies.length;
+    }
+    movie = movies[day];
+    movieEs = moviesEs[day];
+    console.log(movie);
+}
 
 //EventListener
 submit.addEventListener('click', check);

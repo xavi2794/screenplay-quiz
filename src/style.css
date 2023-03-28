@@ -65,6 +65,7 @@ input {
 input[type=submit]{
     width: 100%;
     border: none;
+    border-radius: 3px;
     text-decoration: none;
     color: white;
     cursor: pointer;
@@ -103,7 +104,7 @@ input[type=submit]{
     }
     .main-container {
         width: 300px;
-        height: 490px;
+        height: 450px;
     }
     .header {
         width: 250px;

@@ -4,6 +4,7 @@ import { today } from "./date.js";
 
 //Declare variables
 var day = today;
+console.log(today);
 var movieEs = moviesEs[0];
 var movie = movies[0]
 var p1 = document.querySelector('#phrase1');
@@ -28,12 +29,13 @@ function startGame() {
 
 //Select movies
 function select() {
-    while (day > movies.length) {
+    while (day >= movies.length) {
         day = day - movies.length;
+        console.log(day);
     }
-    movie = movies[day];
-    movieEs = moviesEs[day];
+    movie = movies[day - 1];
     console.log(movie);
+    movieEs = moviesEs[day - 1];
 }
 
 //EventListener

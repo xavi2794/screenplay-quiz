@@ -37,6 +37,7 @@ p {
     width: 300px;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .answer {
@@ -51,6 +52,7 @@ p {
 input {
     border: none;
     padding: 10px;
+    text-decoration: none;
 }
 
 #title {
@@ -61,16 +63,18 @@ input {
 }
 
 input[type=submit]{
+    width: 100%;
     border: none;
     text-decoration: none;
     color: white;
     cursor: pointer;
     background-color: green;
+    text-decoration: none;
+    outline: none;
 }
 
 .poster {
     height: 300px;
-
 }
 
 .posterDiv {
@@ -90,4 +94,29 @@ input[type=submit]{
     font-weight: bold;
     font-size: large;
     text-align: center;
+}
+
+@media (max-width: 640px){
+    body {
+        height: 100vh;
+        margin: 0;
+    }
+    .main-container {
+        width: 300px;
+        height: 490px;
+    }
+    .header {
+        width: 250px;
+    }
+    .clue {
+        width: 250px;
+        height: 50px; 
+    }
+    .answer {
+        width: 250px;
+    }
+    .poster {
+        height: 250px;
+    }
+
 }

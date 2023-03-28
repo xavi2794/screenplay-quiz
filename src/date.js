@@ -7,8 +7,8 @@ setInterval(() =>{
     var date = new Date();
     var clock = document.getElementById('clock');
     var hour = 23 - date.getHours();
-    var minutes = 60 - date.getMinutes();
-    var seconds = 60 - date.getSeconds();
+    var minutes = 59 - date.getMinutes();
+    var seconds = 59 - date.getSeconds();
 
     if(hour < 10) {
         hour = `0${hour}`;
@@ -19,6 +19,8 @@ setInterval(() =>{
     if(seconds < 10) {
         seconds = `0${seconds}`;
     }
-
+    if(hour == '00' && minutes == '00' && seconds == '00'){
+        window.location.reload();
+    }
     clock.innerHTML = `${hour}:${minutes}:${seconds}`;
 }, 1000);

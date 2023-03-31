@@ -23,5 +23,7 @@ setInterval(() =>{
         window.location.reload();
         localStorage.setItem("game", 0);
     }
-    clock.innerHTML = `${hour}:${minutes}:${seconds}`;
+    if(clock != null){
+        clock.innerHTML = `${hour}:${minutes}:${seconds}`;
+    }
 }, 1000);

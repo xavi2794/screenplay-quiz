@@ -20,8 +20,15 @@ function checkProgress() {
         localStorage.setItem("game", 0);
         startGame();
     } else {
-        titleOptions();
         select();
+        if (localStorage.getItem("game") == "win"){
+            win();
+        }
+        if (localStorage.getItem("game") == "lose"){
+            lose();
+        }
+        titleOptions();
+
         p1.append(movie.phrase1);
         if (localStorage.getItem("game") == 1) {
             p2.append(movie.phrase2);
@@ -115,6 +122,7 @@ function changeLanguage() {
 function check() {
     var attempt = document.getElementById('title').value;
     if (attempt == movie.title || attempt == movieEs.title) {
+        localStorage.setItem("game", "win");
         win();
     } else {
         if (p2.innerHTML == '') {
@@ -138,6 +146,7 @@ function check() {
                 console.log(localStorage.getItem("game"));
             }
         } else {
+            localStorage.setItem("game", "lose");
             lose();
         }
     }

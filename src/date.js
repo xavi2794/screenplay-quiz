@@ -1,5 +1,5 @@
 const dayOfYear = date =>
-  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 59 / 59 / 23);
 
 export const today = dayOfYear(new Date());
 
@@ -21,6 +21,7 @@ setInterval(() =>{
     }
     if(hour == '00' && minutes == '00' && seconds == '00'){
         window.location.reload();
+        localStorage.setItem("game", 0);
     }
     clock.innerHTML = `${hour}:${minutes}:${seconds}`;
 }, 1000);

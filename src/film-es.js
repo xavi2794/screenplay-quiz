@@ -33,5 +33,19 @@ export const moviesEs = [
         phrase2: "Yo he visto cosas que vosotros no creeríais.",
         phrase3: "Soy Deckard, bladerunner 2-6-3-5-4. Estoy registrado y localizado.",
         img:"https://pics.filmaffinity.com/Blade_Runner-351607743-large.jpg"
+    },
+    {
+        title: "Todo a la Vez en Todas Partes",
+        phrase1: "Solo hay comida para tres. Ahora tendré que cocinar más.",
+        phrase2: "Tú... Deberías intentar comer más sano. Estás engordando.",
+        phrase3: "Todos estos años de búsqueda me han traído aquí. A este universo. A ti.",
+        img:"https://pics.filmaffinity.com/Todo_a_la_vez_en_todas_partes-897692218-large.jpg"
+    },
+    {
+        title: "Piratas del Caribe: La maldición de la Perla Negra",
+        phrase1: "No puedo respirar",
+        phrase2: "Me resultas familiar... ¿Te he amenazado antes?",
+        phrase3: "Caballeros... mi lady... siempre recordaréis este día como el día que casi capturáis al capitán, Jack Sparrow.",
+        img:"https://m.media-amazon.com/images/M/MV5BNGYyZGM5MGMtYTY2Ni00M2Y1LWIzNjQtYWUzM2VlNGVhMDNhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg"
     }
 ]

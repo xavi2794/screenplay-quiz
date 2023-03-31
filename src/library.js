@@ -33,6 +33,20 @@ export const movies = [
         phrase2: "I've seen things you people wouldn't believe.",
         phrase3: "I'm Deckard. Blade Runner. Two sixty three-fifty four. I'm filed and monitored",
         img:"https://pics.filmaffinity.com/Blade_Runner-351607743-large.jpg"
+    },
+    {
+        title: "Everything Everywhere All at Once",
+        phrase1: "I only made enough food for three people. I'll have to cook more.",
+        phrase2: "I just want to say... Try to eat healthier. You're getting fat.",
+        phrase3: "All those years of searching have brought me here. To this universe. To you.",
+        img:"https://pics.filmaffinity.com/Todo_a_la_vez_en_todas_partes-897692218-large.jpg"
+    },
+    {
+        title: "Pirates of the Caribbean: The Curse of the Black Pearl",
+        phrase1: "I can't breathe.",
+        phrase2: "You look familiar ... Have I ever threatened you before?",
+        phrase3: "Gentleman. .. m' lady. .. you will always remember this as the day you almost caught Captain Jack Sparrow.",
+        img:"https://m.media-amazon.com/images/M/MV5BNGYyZGM5MGMtYTY2Ni00M2Y1LWIzNjQtYWUzM2VlNGVhMDNhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg"
     }
 ]
 

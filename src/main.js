@@ -4,7 +4,6 @@ import { today } from "./date.js";
 
 //Declare variables
 var day = today;
-console.log(today);
 var movieEs = moviesEs[0];
 var movie = movies[0]
 var p1 = document.querySelector('#phrase1');
@@ -16,7 +15,26 @@ var langChange = document.getElementById('lang');
 var titles = [];
 var lang = "EN"
 
-startGame();
+function checkProgress() {
+    if (localStorage.getItem("game") == null) {
+        localStorage.setItem("game", 0);
+        startGame();
+    } else {
+        titleOptions();
+        select();
+        p1.append(movie.phrase1);
+        if (localStorage.getItem("game") == 1) {
+            p2.append(movie.phrase2);
+        }
+        if (localStorage.getItem("game") == 2) {
+            p2.append(movie.phrase2);
+            p3.append(movie.phrase3);
+        }
+    }
+}
+
+
+checkProgress();
 
 
 //Start Game with movie of the Day
@@ -31,11 +49,9 @@ function startGame() {
 function select() {
     while (day >= movies.length) {
         day = day - movies.length;
-        console.log(day);
     }
-    movie = movies[day - 1];
-    console.log(movie);
-    movieEs = moviesEs[day - 1];
+    movie = movies[day];
+    movieEs = moviesEs[day];
 }
 
 //EventListener
@@ -102,9 +118,25 @@ function check() {
         win();
     } else {
         if (p2.innerHTML == '') {
-            (lang == "EN") ? p2.append(movie.phrase2) : p2.append(movieEs.phrase2);
+            if (lang == "EN"){
+                p2.append(movie.phrase2);
+                localStorage.setItem("game", 1);
+                console.log(localStorage.getItem("game"));
+            } else {
+                p2.append(movieEs.phrase2);
+                localStorage.setItem("game", 1);
+                console.log(localStorage.getItem("game"));
+            }
         } else if (p3.innerHTML == '') {
-            (lang == "EN") ? p3.append(movie.phrase3) : p3.append(movieEs.phrase3);
+            if (lang == "EN"){
+                p3.append(movie.phrase3);
+                localStorage.setItem("game", 2);
+                console.log(localStorage.getItem("game"));
+            } else {
+                p3.append(movieEs.phrase3);
+                localStorage.setItem("game", 2);
+                console.log(localStorage.getItem("game"));
+            }
         } else {
             lose();
         }

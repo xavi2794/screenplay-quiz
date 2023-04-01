@@ -40,8 +40,19 @@ function checkProgress() {
     }
 }
 
+function checkDay(){
+    if(localStorage.getItem("dayChallenge") == null){
+        localStorage.setItem("dayChallenge", day);
+    }
 
-checkProgress();
+    if(localStorage.getItem("dayChallenge") < day){
+        localStorage.clear();
+    }
+    console.log(localStorage.getItem("dayChallenge"));
+    checkProgress();
+}
+
+checkDay();
 
 
 //Start Game with movie of the Day

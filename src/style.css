@@ -54,7 +54,7 @@ input {
     text-decoration: none;
 }
 
-#title {
+.title {
     margin-right: 5px;
     padding: 0;
     width: 100%;

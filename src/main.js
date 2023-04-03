@@ -1,19 +1,21 @@
 import { movies } from "./library.js";
 import { moviesEs } from "./film-es.js";
-import { today } from "./date.js";
+import { dayNumber } from "./date.js";
 
 //Declare variables
-var day = today;
+var dayOfYear = dayNumber;
 var movieEs = moviesEs[0];
-var movie = movies[0]
+var movie = movies[0];
 var p1 = document.querySelector('#phrase1');
 var p2 = document.getElementById('phrase2');
 var p3 = document.querySelector('#phrase3');
 var submit = document.querySelector('#submit');
 var dataList = document.getElementById('options');
 var langChange = document.getElementById('lang');
+//var title = document.getElementsByClassName('title');
+var result = document.getElementsByClassName('result');
 var titles = [];
-var lang = "EN"
+var lang = "EN";
 
 function checkProgress() {
     if (localStorage.getItem("game") == null) {
@@ -42,13 +44,13 @@ function checkProgress() {
 
 function checkDay(){
     if(localStorage.getItem("dayChallenge") == null){
-        localStorage.setItem("dayChallenge", day);
+        localStorage.setItem("dayChallenge", dayOfYear);
     }
 
-    if(localStorage.getItem("dayChallenge") < day){
+    if(localStorage.getItem("dayChallenge") != dayOfYear){
         localStorage.clear();
+        localStorage.setItem("dayChallenge", dayOfYear);
     }
-    console.log(localStorage.getItem("dayChallenge"));
     checkProgress();
 }
 
@@ -65,11 +67,11 @@ function startGame() {
 
 //Select movies
 function select() {
-    while (day >= movies.length) {
-        day = day - movies.length;
+    while (dayOfYear >= movies.length) {
+        dayOfYear = dayOfYear - movies.length;
     }
-    movie = movies[day];
-    movieEs = moviesEs[day];
+    movie = movies[dayOfYear];
+    movieEs = moviesEs[dayOfYear];
 }
 
 //EventListener
@@ -110,6 +112,19 @@ function changeLanguage() {
             p3.innerHTML = '';
             p3.append(movieEs.phrase3);
         }
+        let title = document.getElementById('title');
+        if (title.innerHTML == movie.title){
+            title.innerHTML = '';
+            title.append(movieEs.title);
+        }
+        let gameResult = document.getElementById('gameResult');
+        if (gameResult.innerHTML == 'Congratulations!'){
+            gameResult.innerHTML = '';
+            gameResult.append('Felicidades!')
+        } else if (gameResult.innerHTML == 'You lose!') {
+            gameResult.innerHTML = '';
+            gameResult.append('Perdiste!')
+        }
         titleOptionsEs();
     } else {
         langChange.innerHTML = "Cambiar a Español";
@@ -124,6 +139,19 @@ function changeLanguage() {
         if (p3.innerHTML != '') {
             p3.innerHTML = '';
             p3.append(movie.phrase3);
+        }
+        let title = document.getElementById('title');
+        if (title.innerHTML == movieEs.title){
+            title.innerHTML = '';
+            title.append(movie.title);
+        }
+        let gameResult = document.getElementById('gameResult');
+        if (gameResult.innerHTML == 'Felicidades!'){
+            gameResult.innerHTML = '';
+            gameResult.append('Congratulations!')
+        } else if (gameResult.innerHTML == 'Perdiste!') {
+            gameResult.innerHTML = '';
+            gameResult.append('You lose!')
         }
         titleOptions();
     }
@@ -169,26 +197,26 @@ function win() {
         parent = phrase1.parentNode;
         parent.parentNode.innerHTML = `
     <div class="header">
-        <h1>${movie.title}</h1>
+        <h1 id="title">${movie.title}</h1>
     </div>
     <div class="posterDiv">
         <img class="poster" src="${movie.img}">
     </div>
     <div class="result">
-        <h3>Congratulations!</h3>
+        <h3 id="gameResult">Congratulations!</h3>
     </div>
     `;
     } else {
         parent = phrase1.parentNode;
         parent.parentNode.innerHTML = `
     <div class="header">
-        <h1>${movieEs.title}</h1>
+        <h1 id="title">${movieEs.title}</h1>
     </div>
     <div class="posterDiv">
         <img class="poster" src="${movieEs.img}">
     </div>
     <div class="result">
-        <h3>Felicidades!</h3>
+        <h3 id="gameResult">Felicidades!</h3>
     </div>
     `;
     }
@@ -200,26 +228,26 @@ function lose() {
         parent = phrase1.parentNode;
         parent.parentNode.innerHTML = `
     <div class="header">
-        <h1>${movie.title}</h1>
+        <h1 id="title">${movie.title}</h1>
     </div>
     <div class="posterDiv">
         <img class="poster" src="${movie.img}">
     </div>
     <div class="result">
-        <h3>You lose!</h3>
+        <h3 id="gameResult">You lose!</h3>
     </div>
     `;
     } else {
         parent = phrase1.parentNode;
         parent.parentNode.innerHTML = `
     <div class="header">
-        <h1>${movieEs.title}</h1>
+        <h1 class="title">${movieEs.title}</h1>
     </div>
     <div class="posterDiv">
         <img class="poster" src="${movieEs.img}">
     </div>
     <div class="result">
-        <h3>Perdiste!</h3>
+        <h3 id="gameResult">Perdiste!</h3>
     </div>
     `;
     }

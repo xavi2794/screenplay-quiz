@@ -1,7 +1,11 @@
-const dayOfYear = date =>
-  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 59 / 59 / 23);
+var now = new Date();
+var start = new Date(now.getFullYear(), 0, 0);
+var diff = now - start;
+var oneDay = 1000 * 60 * 60 * 24;
+var day = Math.floor(diff / oneDay);
+export var dayNumber = day;
 
-export const today = dayOfYear(new Date());
+
 
 setInterval(() =>{
     var date = new Date();
